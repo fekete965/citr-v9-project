@@ -1,8 +1,8 @@
 import { createContext, useContext, useState } from "react";
 
-export const CartContext = createContext(undefined);
+const CartContext = createContext(undefined);
 
-export function CartProvider({ children }) {
+function CartProvider({ children }) {
   const cartValue = useState([]);
 
   return (
@@ -10,7 +10,7 @@ export function CartProvider({ children }) {
   );
 }
 
-export function useCartContext() {
+function useCartContext() {
   const context = useContext(CartContext);
 
   if (context == null) {
@@ -19,3 +19,5 @@ export function useCartContext() {
 
   return context;
 }
+
+export { CartContext, CartProvider, useCartContext };

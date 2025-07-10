@@ -3,6 +3,7 @@ import globals from "globals";
 import pluginReact from "eslint-plugin-react";
 import { defineConfig } from "eslint/config";
 import prettier from "eslint-config-prettier";
+import pluginQuery from "@tanstack/eslint-plugin-query";
 
 /** @type {import("eslint").Linter.Config} */
 export default defineConfig([
@@ -19,6 +20,7 @@ export default defineConfig([
     },
   },
   pluginReact.configs.flat["jsx-runtime"],
+  ...pluginQuery.configs["flat/recommended"],
   {
     files: ["**/*.{js,mjs,cjs,jsx}"],
     languageOptions: {
