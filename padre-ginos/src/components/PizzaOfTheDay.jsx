@@ -1,9 +1,5 @@
-import { usePizzaOfTheDay } from "../usePizzaOfTheDay";
-
-const intl = new Intl.NumberFormat("en-GB", {
-  style: "currency",
-  currency: "GBP",
-});
+import { usePizzaOfTheDay } from "../hooks/usePizzaOfTheDay";
+import { formatCurrency } from "../utils/formatCurrency";
 
 function PizzaOfTheDay() {
   const pizzaOfTheDay = usePizzaOfTheDay();
@@ -20,7 +16,7 @@ function PizzaOfTheDay() {
           <h3>{pizzaOfTheDay.name}</h3>
           <p>{pizzaOfTheDay.description}</p>
           <p className="pizza-of-the-day-price">
-            From {intl.format(pizzaOfTheDay.sizes.S)}
+            From {formatCurrency(pizzaOfTheDay.sizes.S)}
           </p>
         </div>
         <img
