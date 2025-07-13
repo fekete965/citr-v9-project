@@ -1,4 +1,4 @@
-async function postContact(email, name, message) {
+async function postContact(name, email, message) {
   const response = await fetch("/api/contact", {
     method: "POST",
     headers: {

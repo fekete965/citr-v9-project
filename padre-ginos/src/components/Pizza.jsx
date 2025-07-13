@@ -3,7 +3,7 @@ const Pizza = (props) => {
     <div className="pizza">
       <h1>{props.name}</h1>
       <p>{props.description}</p>
-      <img alt={props.name} src={props.image} />
+      <img alt={props.name} src={props.image ?? "https://picsum.photos/200"} />
     </div>
   );
 };
