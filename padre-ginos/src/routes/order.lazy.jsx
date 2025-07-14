@@ -31,9 +31,7 @@ function OrderComponent() {
     setPizzaSize(event.target.value);
   }
 
-  function handleOnSubmit(event) {
-    event.preventDefault();
-
+  function handleOnSubmit() {
     setCart((prev) => {
       return [
         ...prev,
@@ -76,7 +74,7 @@ function OrderComponent() {
     <div className="order-page">
       <div className="order">
         <h2>Create Order</h2>
-        <form onSubmit={handleOnSubmit}>
+        <form action={handleOnSubmit}>
           <div>
             <div>
               <label htmlFor="pizza-type">Pizza Type</label>

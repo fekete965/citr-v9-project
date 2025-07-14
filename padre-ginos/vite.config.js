@@ -8,7 +8,18 @@ const viteConfig = defineConfig({
       target: "react",
       autoCodeSplitting: true,
     }),
-    react(),
+    react({
+      babel: {
+        plugins: [
+          [
+            "babel-plugin-react-compiler",
+            {
+              target: "19",
+            },
+          ],
+        ],
+      },
+    }),
   ],
   server: {
     proxy: {
